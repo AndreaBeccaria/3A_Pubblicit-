@@ -1,0 +1,156 @@
+.cardPub
+{
+    transform-style:preserve-3d; 
+}
+
+.faccia{
+    backface-visibility: hidden;
+}
+
+footer section
+{
+    width:max-content;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height:100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body > header
+{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    text-shadow: 0.5px 0.5px 0.5px;
+    font-size: 30px;
+}
+
+.card
+{
+    height:200px;
+    width:150px;
+}
+
+main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+section > div
+{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+main > section + section
+{
+    height: 200px;
+    width: 300px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+main > section + section > div
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cardPub
+{
+    height: 110px;
+    width:110px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-top: 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-image: url(img/dorso.png);
+    background-image: url(img/fruttoviola.png);
+    background-image: url(img/fruttorosso.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    animation-name: pubblicita;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes pubblicita 
+{
+    0%
+    {
+        transform: rotate3d(0 , 0 , 0 , 0deg);
+        background-image: url(img/fruttorosso.png);
+    }
+    25%
+    {
+        transform: rotate3d(0 , 45 , 0 , 45deg);
+        background-image: url(img/fruttorosso.png);
+    }
+    50%
+    {
+        transform: rotate3d(0 , 90 , 0 , 90deg);
+        background-image: url(img/dorso.png);
+    }
+    75%
+    {
+        transform: rotate3d(0 , 135 , 0 , 45deg);
+        background-image: url(img/dorso.png);
+    }
+    100%
+    {
+        transform: rotate3d(0 , 180 , 0 , 0deg);
+        background-image: url(img/dorso.png);
+    }
+}
+
+@media screen and (max-width:500px) 
+{
+    body > header
+    {
+        display: none;
+    }
+
+    body
+    {
+        background-color: yellow;
+    }
+    body > main > section > article
+    {
+        display: none;
+    }
+    body > footer 
+    {
+        display: none;
+    }
+}
+
+footer
+{
+
+}
+
+@keyframes footer 
+{
+    0%
+    {
+        footer > section
+        {
+            transform: translateX(500px);
+        }
+    }
+}
